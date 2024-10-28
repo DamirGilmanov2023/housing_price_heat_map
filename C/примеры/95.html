@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script type="text/javascript">
+        var oneTimeExecution = (function() {
+                    var executed = false;
+                    return function() {
+                        if (!executed) {
+                             var checkExist = setInterval(function() {
+                                       if ((document.getElementsByClassName('leaflet-top leaflet-right').length) || (!executed)) {
+                                          document.getElementsByClassName('leaflet-top leaflet-right')[0].style.display = "flex"
+                                          document.getElementsByClassName('leaflet-top leaflet-right')[0].style.flexDirection = "column"
+                                          document.getElementsByClassName('leaflet-top leaflet-right')[0].innerHTML += `
+    <div id='maplegend' class='maplegend'>
+      <div class='legend-title'> </div>
+      <div class='legend-scale'>
+        <ul class='legend-labels'>
+        <li><span style='background:rgba(0, 0, 3, 1)'></span>124732</li><li><span style='background:rgba(20, 13, 54, 1)'></span>111191</li><li><span style='background:rgba(59, 15, 112, 1)'></span>97650</li><li><span style='background:rgba(99, 25, 128, 1)'></span>84109</li><li><span style='background:rgba(140, 41, 129, 1)'></span>70569</li><li><span style='background:rgba(181, 54, 122, 1)'></span>57028</li><li><span style='background:rgba(222, 73, 104, 1)'></span>43487</li><li><span style='background:rgba(247, 110, 92, 1)'></span>29946</li><li><span style='background:rgba(254, 159, 109, 1)'></span>16406</li>
+        </ul>
+      </div>
+    </div>
+    `;
+                                          clearInterval(checkExist);
+                                          executed = true;
+                                       }
+                                    }, 100);
+                        }
+                    };
+                })();
+        oneTimeExecution()
+        </script>
+      
+
+    <style type='text/css'>
+      .maplegend {
+        z-index:9999;
+        float:right;
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 5px;
+        border: 2px solid #bbb;
+        padding: 10px;
+        font-size:12px;
+        positon: relative;
+      }
+      .maplegend .legend-title {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 90%;
+        }
+      .maplegend .legend-scale ul {
+        margin: 0;
+        margin-bottom: 5px;
+        padding: 0;
+        float: left;
+        list-style: none;
+        }
+      .maplegend .legend-scale ul li {
+        font-size: 80%;
+        list-style: none;
+        margin-left: 0;
+        line-height: 18px;
+        margin-bottom: 2px;
+        }
+      .maplegend ul.legend-labels li span {
+        display: block;
+        float: left;
+        height: 16px;
+        width: 30px;
+        margin-right: 5px;
+        margin-left: 0;
+        border: 0px solid #ccc;
+        }
+      .maplegend .legend-source {
+        font-size: 80%;
+        color: #777;
+        clear: both;
+        }
+      .maplegend a {
+        color: #777;
+        }
+    </style>
+    
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_099fafc1bba64be2b4c86453d89fe528 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_099fafc1bba64be2b4c86453d89fe528" ></div>
+        
+</body>
+<script>    
+    
+            var map_099fafc1bba64be2b4c86453d89fe528 = L.map(
+                "map_099fafc1bba64be2b4c86453d89fe528",
+                {
+                    center: [55.154, 61.4291],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fa008ecd4cfc4f9eafb2fcd1ffa46afc = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/damir1990/ckv5n5ulj2gsg15nzai2nr3wb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZGFtaXIxOTkwIiwiYSI6ImNrdjVteGhnYzR0ZzUyb3M3aGExbDU4ZzgifQ.ae9NSjeWP5PzeVJqKFqpZw",
+                {"attribution": "Mapbox", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_099fafc1bba64be2b4c86453d89fe528);
+        
+    
+            var image_overlay_75c75a7805f94cad849b854982b8719d = L.imageOverlay(
+                "data:image/png;base64,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",
+                [[54.984724, 61.216073], [55.343458, 61.601412999999994]],
+                {"opacity": 0.8}
+            ).addTo(map_099fafc1bba64be2b4c86453d89fe528);
+        
+</script>
